@@ -9,7 +9,7 @@ get '/auth/:provider/callback' => 'authentications#create'
   
   
 #      get 'auth/:provider/callback', to: 'sessions#create'
-#
+
     get 'auth/failure', to: redirect('/')
     
     get 'signout', to: 'authentications#destroy', as: 'signout'

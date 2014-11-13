@@ -49,13 +49,13 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li>
-             <%#= link_to 'Login with Facebook', '/auth/facebook/' %> 
-             <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+<%#= link_to 'Login with Facebook', '/auth/facebook/' %> 
+              <% if current_user %>
+
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+              <% end %>
 
             </li>  
           </ul>
@@ -70,11 +70,11 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-       
+
         </div><!--/span-->
       </div><!--/row-->
 
-     
+
 
     </div> <!-- /container -->
 
